@@ -1,0 +1,64 @@
+/* Resetting basic styling */
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevents scrolling */
+    background-color: #000;
+}
+
+h1 {
+    color: #c8c8c8;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 500;
+    margin: 0; /* Removes default margin */
+    position: relative; /* Allows positioning on top of the video */
+    z-index: 2; /* Ensures the heading appears above the video */
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column; /* Stacks children vertically */
+    justify-content: center;
+    align-items: center;
+    position: relative; /* To position child elements above the video */
+    z-index: 2; /* Ensures container elements appear above the video */
+}
+
+/* Styling for the button */
+button {
+    margin-top: 20px; /* Adds spacing between the heading and the button */
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    background-color: #c8c8c8;
+    color: #000;
+    border-radius: 5px;
+    position: relative; /* Keeps button positioned above the video */
+    z-index: 2; /* Ensures the button appears above the video */
+}
+
+/* Styling for the video background */
+video {
+    position: fixed; /* Fixes the video in place */
+    top: 50%; /* Centers the video vertically */
+    left: 50%; /* Centers the video horizontally */
+    min-width: 100%; /* Ensures video covers the entire width */
+    min-height: 100%; /* Ensures video covers the entire height */
+    width: auto; /* Ensures the aspect ratio is maintained */
+    height: auto; /* Ensures the aspect ratio is maintained */
+    z-index: 1; /* Places the video below other elements */
+    transform: translate(-50%, -50%); /* Perfectly centers the video */
+    background-size: cover; /* Ensures video covers the entire screen */
+    overflow: hidden; /* Prevents extra video from showing */
+
+}
+button:hover{
+    background-color: #000;
+    color: #c8c8c8;
+}

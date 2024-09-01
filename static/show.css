@@ -1,0 +1,134 @@
+/* Reset some default browser styles */
+body, h1, p {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Full viewport height and center content */
+html {
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #89CFF0, #ff6f61, #ffcc00);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Background weather animation */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background: url('https://www.transparenttextures.com/patterns/cubes.png');
+    animation: animateBackground 20s ease-in-out infinite;
+    z-index: -1;
+    opacity: 0.4;
+}
+
+/* Container styling */
+.container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    width: 100%;
+    backdrop-filter: blur(15px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+}
+
+/* Heading styling */
+h1 {
+    font-size: 3.2em;
+    color: #333;
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Input styling */
+input[type="text"] {
+    width: 80%;
+    padding: 15px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    outline: none;
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+input[type="text"]:focus {
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.3);
+    transform: scale(1.02);
+}
+
+/* Button styling */
+button {
+    padding: 12px 30px;
+    font-size: 1.3em;
+    color: #fff;
+    background: #ff6f61;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background: #ffcc00;
+    transform: translateY(-5px);
+}
+
+/* Paragraph styling */
+p {
+    font-size: 1.4em;
+    color: #555;
+    margin: 20px 0 0;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Background animation */
+@keyframes animateBackground {
+    0% { transform: translateX(0) translateY(0); }
+    50% { transform: translateX(-100px) translateY(-100px); }
+    100% { transform: translateX(0) translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    p {
+        font-size: 1.2em;
+    }
+
+    input[type="text"] {
+        width: 100%;
+        padding: 12px;
+        font-size: 1em;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+    }
+}
